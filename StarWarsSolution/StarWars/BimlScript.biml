@@ -1,0 +1,16 @@
+﻿<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+        <Connections>
+            <OleDbConnection    Name="StarWarsDb"
+                                ConnectionString="Data Source=localhost;Initial Catalog=StarWars;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;"
+                                CreateInProject="true"/>
+        </Connections>
+        <Packages>
+            <Package Name="DataPull" ConstraintMode="LinearOnSuccess">
+                <Tasks>
+                    <ExecuteSQL Name="Test SQL Exec" ConnectionName="StarWarsDb">
+                        <DirectInput>SELECT Test = 'Hello World'</DirectInput>
+                    </ExecuteSQL>
+                </Tasks>
+            </Package>
+        </Packages>
+</Biml>

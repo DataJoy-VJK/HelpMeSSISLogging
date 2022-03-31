@@ -1,0 +1,98 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/11/2019 2:51:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VJK_LAPTOP"
+  DTS:CreatorName="KZ\vanessa.kesten"
+  DTS:DTSID="{21940E67-12CA-42A3-93A2-1E0B48F434D4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="TruncateAll"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{6253A068-ABC1-4441-9085-FDC0F683C145}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Bridge Staging Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7260418f-5919-42c5-bd8c-dd79da80034b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Bridge Staging Tables"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{42F9B177-C44C-4D80-93FD-A04FD189EB24}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE StarWars.staging.films_characters&#xA;TRUNCATE TABLE StarWars.staging.films_planets&#xA;TRUNCATE TABLE StarWars.staging.films_species&#xA;TRUNCATE TABLE StarWars.staging.films_starships&#xA;TRUNCATE TABLE StarWars.staging.films_vehicles&#xA;TRUNCATE TABLE StarWars.staging.people_films&#xA;TRUNCATE TABLE StarWars.staging.people_species&#xA;TRUNCATE TABLE StarWars.staging.people_starships&#xA;TRUNCATE TABLE StarWars.staging.people_vehicles&#xA;TRUNCATE TABLE StarWars.staging.planets_films&#xA;TRUNCATE TABLE StarWars.staging.planets_residents&#xA;TRUNCATE TABLE StarWars.staging.species_films&#xA;TRUNCATE TABLE StarWars.staging.species_people&#xA;TRUNCATE TABLE StarWars.staging.starships_films&#xA;TRUNCATE TABLE StarWars.staging.starships_pilots&#xA;TRUNCATE TABLE StarWars.staging.vehicles_films&#xA;TRUNCATE TABLE StarWars.staging.vehicles_pilots&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Main Staging Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c6ddc996-041f-4c2c-a2b1-d76462be1518}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Main Staging Tables"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{42F9B177-C44C-4D80-93FD-A04FD189EB24}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.films&#xA;TRUNCATE TABLE staging.people&#xA;TRUNCATE TABLE staging.planets&#xA;TRUNCATE TABLE staging.species&#xA;TRUNCATE TABLE staging.starships&#xA;TRUNCATE TABLE staging.vehicles" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Raw Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{aea38bae-aaed-4444-8c12-f0e46700830f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Raw Table"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{42F9B177-C44C-4D80-93FD-A04FD189EB24}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [StarWars].[raw].[JsonFiles]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Truncate Raw Table"
+          TopLeft="50.4166668094694,40.0666670231024" />
+        <NodeLayout
+          Size="220,42.6666666666667"
+          Id="Package\Truncate Main Staging Tables"
+          TopLeft="258.333330377936,38.3000022238493" />
+        <NodeLayout
+          Size="220,42.6666666666667"
+          Id="Package\Truncate Bridge Staging Tables"
+          TopLeft="262.916663642973,109.366667619745" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

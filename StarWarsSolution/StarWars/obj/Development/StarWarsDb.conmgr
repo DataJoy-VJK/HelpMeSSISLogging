@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="StarWarsDb"
+  DTS:DTSID="{42F9B177-C44C-4D80-93FD-A04FD189EB24}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="data source=localhost;initial catalog=StarWars;provider=SQLNCLI11.1;integrated security=SSPI;auto translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
